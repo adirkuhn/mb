@@ -24,7 +24,7 @@ gem 'sqlite3',                '1.3.10'
 group :production, :staging do
   gem 'rails_12factor',       '0.0.3'
   gem 'rack-canonical-host',  '0.1.0'
-  gem 'newrelic_rpm',         '~> 3.12'
+  gem 'newrelic_rpm',         '~> 3'
   gem 'rollbar',              '2.1.1'
   gem 'librato-rails',        '0.11.1'
 end

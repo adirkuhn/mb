@@ -311,7 +311,7 @@ DEPENDENCIES
   letter_opener (= 1.4.1)
   librato-rails (= 0.11.1)
   neat (= 1.7.2)
-  newrelic_rpm (~> 3.12)
+  newrelic_rpm (~> 3)
   normalize-rails (= 3.0.3)
   pg (= 0.18.2)
   poltergeist (= 1.6.0)
