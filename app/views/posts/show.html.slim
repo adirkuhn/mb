@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Post:
+  = @post.post
+p
+  strong Created at:
+  = @post.created_at
+
+= link_to 'Edit', edit_post_path(@post)
+'|
+= link_to 'Back', posts_path
