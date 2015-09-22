@@ -2,7 +2,24 @@ doctype html
 html
 	head
 		title mb
+		= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= csrf_meta_tags
 	body
-		p.notice =notice
-		p.alert =alert
-		=yield
+		nav.navbar.navbar-default
+			.container
+				.navbar-brand= link_to "MicroBlog", root_path
+
+				ul.nav.navbar-nav.navbar-right
+					- if user_signed_in?
+						li= link_to "New Post", new_post_path
+						li= link_to "Account", edit_user_registration_path
+						li= link_to "Sign out", destroy_user_session_path,method: :delete
+					- else
+						li= link_to "Sign up", new_user_registration_path
+						li= link_to "Sign in", new_user_session_path
+		.container
+			p.notice =notice
+			p.alert =alert
+		
+			=yield

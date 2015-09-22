@@ -21,6 +21,7 @@ gem 'refills',                '0.1.0'
 gem 'normalize-rails',        '3.0.3'
 gem 'sqlite3',                '1.3.10'
 gem 'devise',                 '~> 3.5.2'
+gem 'bootstrap-sass',         '~> 3.3.5'
 
 group :production, :staging do
   gem 'rails_12factor',       '0.0.3'
