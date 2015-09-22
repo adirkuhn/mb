@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
 
-  layout "base"
-
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
