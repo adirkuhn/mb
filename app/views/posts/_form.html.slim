@@ -1,9 +1,9 @@
-= simple_form_for(@post) do |f|
-  = f.error_notification
+= simple_form_for(@post, html: {multipart: true}) do |f|
+  p.notice =notice
+  p.alert =alert
 
-  .form-inputs
-    = f.input :post
-    = f.input :created_at
+  .form-group
+    = f.input :post, input_html: { class: 'form-control' }
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'btn btn-primary'

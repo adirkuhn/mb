@@ -6,7 +6,7 @@ html
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 		= csrf_meta_tags
 	body
-		nav.navbar.navbar-default
+		nav.navbar.navbar-default.navbar-fixed-top
 			.container
 				.navbar-brand= link_to "MicroBlog", root_path
 
@@ -18,8 +18,10 @@ html
 					- else
 						li= link_to "Sign up", new_user_registration_path
 						li= link_to "Sign in", new_user_session_path
+
+				div.col-sm-2.col-md-2.navbar-right
+					form.navbar-form
+						input.form-control [placeholder="Search posts"]
+
 		.container
-			p.notice =notice
-			p.alert =alert
-		
 			=yield
