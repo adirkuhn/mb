@@ -1,15 +1,20 @@
-p#notice = notice
+#posts.col-md-6.col-md-offset-3
 
-p
-  strong Post:
-  = @post.post
-p
-  strong Created at:
-  = @post.created_at
-p
-  | by 
-  =@post.user.email
+	p#notice = notice
 
-= link_to 'Edit', edit_post_path(@post)
-'|
-= link_to 'Back', posts_path
+	.box.panel.panel-default
+		.panel-heading
+			strong =@post.user.email
+			|  - 
+			=time_ago_in_words(@post.created_at)
+		.panel-body
+			=@post.post
+		.panel-footer.clearfix
+			- if current_user.email == @post.user.email
+				div.dropdown.pull-right
+					a.drop-down-toggle [href="#" data-toggle="dropdown"]
+					span.glyphicon.glyphicon-option-horizontal
+
+					ul.dropdown-menu
+						li=link_to 'Edit', edit_post_path(@post)
+						li=link_to 'Destroy', @post, data: {:confirm => 'Are you sure?'}, :method => :delete
