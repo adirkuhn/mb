@@ -10,7 +10,7 @@
 		.panel-body
 			=@post.post
 		.panel-footer.clearfix
-			- if current_user.email == @post.user.email
+			- if current_user && current_user.email == @post.user.email
 				div.dropdown.pull-right
 					a.drop-down-toggle [href="#" data-toggle="dropdown"]
 					span.glyphicon.glyphicon-option-horizontal
