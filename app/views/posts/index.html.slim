@@ -4,7 +4,7 @@
         .panel-heading
           strong =post.user.email
           |  - 
-          =time_ago_in_words(post.created_at)
+          =link_to time_ago_in_words(post.created_at), post 
         .panel-body
           =post.post
         .panel-footer.clearfix
