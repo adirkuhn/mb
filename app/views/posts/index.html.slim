@@ -4,11 +4,11 @@
         .panel-heading
           strong =post.user.email
           |  - 
-          =time_ago_in_words(post.created_at)
+          =link_to time_ago_in_words(post.created_at), post 
         .panel-body
           =post.post
         .panel-footer.clearfix
-          - if current_user.email == post.user.email
+          - if current_user && current_user.email == post.user.email
             div.dropdown.pull-right
               a.drop-down-toggle [href="#" data-toggle="dropdown"]
                 span.glyphicon.glyphicon-option-horizontal
